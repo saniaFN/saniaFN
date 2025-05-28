@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Pagi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        #backgroundIframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1; /* Menempatkan iframe di belakang konten */
+        }
+        #content {
+            position: relative;
+            z-index: 1; /* Menempatkan konten di depan iframe */
+            color: black; /* Mengubah warna teks menjadi hitam */
+            margin-top: 50px;
+            background-color: rgba(255, 255, 255, 0.7); /* Menambahkan latar belakang putih transparan untuk teks */
+            padding: 20px; /* Menambahkan padding untuk teks */
+            border-radius: 10px; /* Menambahkan sudut melengkung */
+        }
+        #message, #iframeContainer {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe id="backgroundIframe" src="https://assets.pinterest.com/ext/embed.html?id=3025924745622114" scrolling="no"></iframe>
+
+    <div id="content">
+        <h1>Hay, selamat pagi! Apa kabar? Sudah siap hari baru?</h1>
+        <button id="readyButton">Siap</button>
+
+        <div id="message">
+            <p>Pagi yang cerah! Selamat memulai hari dengan semangat. Jangan lupa makan, jangan tidur terus. Mulai hari dengan yang manis-manis, contohnya:</p>
+            <button id="showIframeButton">Coba tekan ini!!!!!</button>
+        </div>
+
+        <div id="iframeContainer">
+            <iframe src="https://assets.pinterest.com/ext/embed.html?id=673710425543411745" height="618" width="345" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('readyButton').onclick = function() {
+            document.getElementById('message').style.display = 'block';
+        };
+
+        document.getElementById('showIframeButton').onclick = function() {
+            document.getElementById('iframeContainer').style.display = 'block';
+        };
+    </script>
+
+</body>
+</html>
